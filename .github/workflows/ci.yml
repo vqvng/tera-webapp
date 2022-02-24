@@ -1,0 +1,17 @@
+name: ci
+
+on: [push]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Build Image
+        run: docker-compose build
+      -
+        name: Integration Test
+        run: docker-compose run --entrypoint "pytest -v -s" web
