@@ -8,7 +8,7 @@ services:
       - "5000:5000"
     depends_on:
       - redis
-    image: web
+    image: ${AWS_ECR_REPOSITORY:-web}:${IMAGE_TAG:-latest}
   redis:
     image: redis:alpine
     ports:
