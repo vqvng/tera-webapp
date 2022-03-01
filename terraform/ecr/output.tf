@@ -5,13 +5,13 @@ output "aws_region" {
 
 output "publisher_access_key" {
   value       = aws_iam_access_key.ecr_deploy.id
-  description = "AWS_ACCESS_KEY to publish to ECR"
+  description = "AWS_ACCESS_KEY for github to push to ECR"
 }
 
 output "publisher_secret_key" {
   value       = aws_iam_access_key.ecr_deploy.secret
-  description = "AWS_SECRET_ACCESS_KEY to upload to the ECR"
-  sensitive = true
+  description = "AWS_SECRET_ACCESS_KEY for github to push to ECR"
+  sensitive   = true
 }
 
 output "ecr_repository_name" {
