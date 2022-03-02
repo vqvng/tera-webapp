@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3-alpine
 
 WORKDIR /tera-webapp
 COPY . /tera-webapp/
@@ -9,4 +9,4 @@ RUN pip install -e .
 ENV FLASK_APP=app
 ENV FLASK_ENV=development
 
-ENTRYPOINT flask run --host=0.0.0.0
+ENTRYPOINT flask run --host=0.0.0.0 --port=80
